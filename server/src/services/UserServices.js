@@ -328,7 +328,7 @@ const UserServices = {
    */
   async getUnapprovedUsers() {
     return UserModel.find(
-      { approved: { $ne: true } },
+      { approved: { $ne: true }, userType: 'leadur' },
       {},
       { strictQuery: false },
     ).then(
