@@ -328,8 +328,7 @@ const UserServices = {
    */
   async getUnapprovedUsers() {
     return UserModel.find(
-      // { approved: { $exists: true, $eq: false } },
-      { approved: { $exists: true } },
+      { approved: { $ne: true } },
       {},
       { strictQuery: false },
     ).then(
